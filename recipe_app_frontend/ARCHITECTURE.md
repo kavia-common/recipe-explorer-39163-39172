@@ -165,15 +165,17 @@ Behavior:
 - API base is resolved as REACT_APP_API_BASE or REACT_APP_BACKEND_URL.
 - If neither is provided or REACT_APP_FEATURE_FLAGS.mockData is true, the app uses in-memory mock data.
 
-Other environment variables may be present in the environment (e.g., REACT_APP_FRONTEND_URL, REACT_APP_WS_URL, REACT_APP_NODE_ENV, REACT_APP_ENABLE_SOURCE_MAPS, REACT_APP_PORT, REACT_APP_TRUST_PROXY, REACT_APP_LOG_LEVEL, REACT_APP_HEALTHCHECK_PATH, REACT_APP_EXPERIMENTS_ENABLED). These are defined in the container’s .env for deployment workflows but are not referenced by the current codebase. Typical future uses could include:
-- REACT_APP_FRONTEND_URL: public app URL for generating absolute links.
+### Other REACT_APP_* variables (not currently used in code)
+
+The following environment variables may exist in .env for deployment workflows but are not referenced by the current codebase. Typical future uses include:
+- REACT_APP_FRONTEND_URL: Public app URL for generating absolute links.
 - REACT_APP_WS_URL: WebSocket endpoint if real-time features are added.
-- REACT_APP_NODE_ENV and REACT_APP_LOG_LEVEL: environment-aware logging and diagnostics.
-- REACT_APP_ENABLE_SOURCE_MAPS: control source map generation in builds.
-- REACT_APP_PORT and REACT_APP_TRUST_PROXY: local dev server or container runtime configuration.
-- REACT_APP_HEALTHCHECK_PATH: surface a UI healthcheck path for container orchestration.
-- REACT_APP_EXPERIMENTS_ENABLED: toggle experimental UI features.
-They can be introduced later as the system evolves.
+- REACT_APP_NODE_ENV and REACT_APP_LOG_LEVEL: Environment-aware logging and diagnostics.
+- REACT_APP_ENABLE_SOURCE_MAPS: Control source map generation in builds.
+- REACT_APP_PORT and REACT_APP_TRUST_PROXY: Local dev server or container runtime configuration.
+- REACT_APP_HEALTHCHECK_PATH: Surface a UI healthcheck path for container orchestration.
+- REACT_APP_EXPERIMENTS_ENABLED: Toggle experimental UI features.
+
 
 ## Theming and Style Guide (Ocean Professional)
 
@@ -316,4 +318,4 @@ Available in environment (for future use and deployment workflows):
 - REACT_APP_HEALTHCHECK_PATH
 - REACT_APP_EXPERIMENTS_ENABLED
 
-These additional variables are not referenced in the current source code but may be adopted as the system evolves.
+Note: These variables are defined for deployment workflows but are not currently referenced by the codebase. See the “Other REACT_APP_* variables (not currently used in code)” subsection above for typical future uses.

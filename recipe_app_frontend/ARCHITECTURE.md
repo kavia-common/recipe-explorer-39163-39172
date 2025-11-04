@@ -165,9 +165,9 @@ Behavior:
 - API base is resolved as REACT_APP_API_BASE or REACT_APP_BACKEND_URL.
 - If neither is provided or REACT_APP_FEATURE_FLAGS.mockData is true, the app uses in-memory mock data.
 
-### Other REACT_APP_* variables (not currently used in code)
+### Other environment variables
 
-The following environment variables may exist in .env for deployment workflows but are not referenced by the current codebase. Typical future uses include:
+These REACT_APP_* variables may be present in your .env for deployment workflows but are not referenced by the current codebase. Typical future uses:
 - REACT_APP_FRONTEND_URL: Public app URL for generating absolute links.
 - REACT_APP_WS_URL: WebSocket endpoint if real-time features are added.
 - REACT_APP_NODE_ENV and REACT_APP_LOG_LEVEL: Environment-aware logging and diagnostics.
@@ -175,8 +175,6 @@ The following environment variables may exist in .env for deployment workflows b
 - REACT_APP_PORT and REACT_APP_TRUST_PROXY: Local dev server or container runtime configuration.
 - REACT_APP_HEALTHCHECK_PATH: Surface a UI healthcheck path for container orchestration.
 - REACT_APP_EXPERIMENTS_ENABLED: Toggle experimental UI features.
-
-
 ## Theming and Style Guide (Ocean Professional)
 
 The app uses a modern, clean aesthetic with subtle shadows and rounded corners. Theme values are defined in src/theme.css as CSS variables:
@@ -318,4 +316,4 @@ Available in environment (for future use and deployment workflows):
 - REACT_APP_HEALTHCHECK_PATH
 - REACT_APP_EXPERIMENTS_ENABLED
 
-Note: These variables are defined for deployment workflows but are not currently referenced by the codebase. See the “Other REACT_APP_* variables (not currently used in code)” subsection above for typical future uses.
+Note: These variables are defined for deployment workflows but are not currently referenced by the codebase. See the “Other environment variables” subsection above for typical future uses.
